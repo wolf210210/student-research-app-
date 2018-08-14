@@ -1,0 +1,28 @@
+<!-- <p>
+  dashboard-detail works!
+</p> -->
+<div class="card" >
+  <iframe width="1030" height="486" [src] ="url | safe" style=" margin: auto;">
+  
+  </iframe>
+  <div class="card-body">
+    <h5 class="card-title">Card {{title}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div>
+          
+
+          <ul class="nav flex-column">
+            <li  class="nav-item" *ngFor = "let Commentss of Comment ">
+              <a>  username  :  {{Commentss.username}}
+                <div>
+                  comment:  {{Commentss.comment}}
+                </div>
+            </a>
+          </li>
+          
+          </ul>
+        </div>
+    <input  type="text" [(ngModel)]="textComment" name="textComment"  class="form-control">
+    <a  (click)="addComment()" class="btn btn-primary">Add Comment</a>
+  </div>
+</div>

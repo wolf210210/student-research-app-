@@ -1,0 +1,43 @@
+<!-- 
+<div class="mycolor">
+  <p>
+    video-list works!
+  </p>
+</div> -->
+<div class="container">
+<ul class="nav flex-column nav-pills">
+    <div class="row">
+        <li (click)="onSelect(video)"  *ngFor = "let video of videos">
+          
+                <div class="col-sm">
+          
+          <!-- <a class="nav-link" >{{video.title}} 
+          <iframe width="250" height="200" [src] ="video.url | safe">
+            
+          </iframe> -->
+          <div class="card" style="width: 18rem;">
+            <iframe width="286" height="186" [src] ="video.url | safe">
+            
+            </iframe>
+            <div class="card-body">
+              <h5 class="card-title">Card {{video.title}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+         
+        <!-- </a> -->
+      </div>
+    </li>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="/assets/avatar2.png" alt="Card image cap"  style="width:60%">
+      <div class="card-body">
+        <h5 class="card-title">Add New Videe</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a (click)="onNew()" class="btn btn-primary"> + Add New Video</a>
+      </div>
+    </div>
+  </div>
+
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+.card{
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav-item{
+    width: 150px
+}
+.text-muted{
+    margin-left: 30px
+}
+.succMsg{
+    background-color: chartreuse;
+}

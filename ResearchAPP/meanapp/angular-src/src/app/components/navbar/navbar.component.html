@@ -1,0 +1,70 @@
+<!-- 
+ 
+<nav class= "navbar navbar-default">
+      <div class="container">
+        <div class= "navbar-header">
+           <button type="button" class ="navbar-toggle collaspsed" date-toggle="collapse" date-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span> 
+            <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="#">SHU App</a>
+           </div>
+           <div id="navbar" class="collapse navbar-collapse">
+             <ul class="nav navbar-nav navbar-left">
+               <li><a [routerLink]="['/']">Home</a></li>
+               
+             </ul>
+             <ul class="nav navbar-nav navbar-right">
+                <li><a [routerLink]="['/login']">Login</a></li>
+                <li><a [routerLink]="['/register']">Register</a></li>
+                <li><a (click)="onLogoutClick()">Logout</a></li>
+              </ul>
+        </div>
+      </div>
+</nav> 
+ -->
+
+ <nav class="navbar navbar-expand-lg navbar-dark mybg-primary">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Register</a>
+      </li>
+      <li class="nav-item " >
+        <a (click)="onLogin()" class="nav-link" >Logout</a>
+      </li> -->
+    </ul>
+    <ul class="navbar-nav navbar-left">
+        <li class="nav-item">
+            <a (click)="onDashboard()" class="nav-link" >Dashboard</a>
+          </li>
+      <li class="nav-item">
+        <a (click)="onProfile()" class="nav-link" >Profile</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="onRegister()" class="nav-link">Register</a>
+      </li>
+      <li class="nav-item ">
+        <a (click)="onLogin()" class="nav-link" >LogIn</a>
+      </li>
+      <li class="nav-item ">
+        <a (click)="OnLogOut()" class="nav-link" >LogOut</a>
+      </li>
+    </ul> 
+    
+      <img src="/assets/avatar2.png" alt="Norway"  style="width:3%">
+  </div>
+</nav>

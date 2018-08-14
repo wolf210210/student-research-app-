@@ -1,0 +1,36 @@
+<!-- <p>
+  side-bar works!
+</p> -->
+
+
+<div class="Mysidenav">
+
+            <img src="/assets/avatar2.png" alt="Norway"  style="width:60% ; margin-left: 40px">
+            <div class="allMargin">
+            <a   (click)="onAccount()" *ngIf="authService.loggedIn()" style="margin-top: 20px" >Account</a>
+            <ul style="margin-left: -15px">
+                <a *ngIf="HideAccount"   (click)="onLogOut()" >LogOut</a>
+                <a *ngIf="HideAccount"   (click)="onProfile()" >Profile</a>
+          </ul>
+        <div *ngIf="authService.loggedIn()"  class="setMargin">
+          <a (click)="onUpload()" >Upload</a>
+                <ul style="margin-left: -15px">
+                    <a *ngIf="HideUpload"   (click)="onVideos()" >Videos</a>
+                    <a *ngIf="HideUpload"   (click)="onProfile()" >Images</a>
+                    <a *ngIf="HideUpload"   (click)="onProfile()" >PDF</a>
+              </ul>
+         
+        </div>
+        <div *ngIf="!authService.loggedIn()"  class="setMargin">
+        <a (click)="onLogin()" >Login</a>
+      </div>
+                
+     
+          <div *ngIf="!authService.loggedIn()" >
+          <a (click)="onRegister()" >Register</a>
+        </div>
+</div>
+</div>
+
+
+  

@@ -1,0 +1,59 @@
+<!-- <p>
+  video-center works!
+</p> -->
+<div *ngIf="selectedVideo && !newVideo">
+    <div class="row">
+      <div class="col-xl-9">
+        <video-list  (SelectVideo)="onSelectVideo($event)"
+                     (newVideo)="onNewVideo($event)"
+                     [videos]= "videos"></video-list>
+      </div>
+      <div class="col-xl-3">
+        <video-detail *ngIf="selectedVideo"  [video]="selectedVideo" > </video-detail>
+      </div>
+    </div>
+</div>
+<div *ngIf="!selectedVideo && !newVideo">
+      <video-list (SelectVideo)="onSelectVideo($event)" 
+                    (newVideo)="onNewVideo($event)"
+                  [videos]= "videos"></video-list>
+</div>
+
+<div *ngIf="newVideo">
+  <div class="row">
+    <div class="col-xl-9">
+      <video-list (SelectVideo)="onSelectVideo($event)" [videos]= "videos"></video-list>
+    </div>
+    <div class="col-xl-3">
+                <form (submit) ="addSubmit()" >
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="Title" placeholder="Title" [(ngModel)] = "Title" >
+                  </div>
+
+ 
+
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">subject</label>
+                    <input type="text" class="form-control" name="subject" placeholder="subject" [(ngModel)] = "subject" >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">unit</label>
+                    <input type="text" class="form-control" name="unit" placeholder="unit" [(ngModel)] = "unit" >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">URL</label>
+                    <input type="text" class="form-control" name="url" placeholder="url" [(ngModel)] = "url" >
+                  </div>
+                
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea class="form-control" name="description"  [(ngModel)] = "description" placeholder="description" rows="3"></textarea>
+                  </div>
+                  <input *ngIf="!ShowSuccess" type="submit" class="btn btn-primary"  value="Submit">
+                </form>
+    </div>
+  </div>
+</div>
+

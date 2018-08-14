@@ -1,0 +1,130 @@
+<!-- <p>
+  register works!
+</p> -->
+<!-- <div>
+            <h2 class="page-header"> Register</h2>
+            <form (submit) ="onRegisterSubmit()">
+                <div class = "form.group">
+                <label>Name</label>
+                <input type="text" [(ngModel)]="name" name="name" class="form-control">
+                </div>
+                <div class = "form.group">
+                    <label>User Name</label>
+                    <input type="text" [(ngModel)]="Username" name="Username" class="form-control">
+                </div>
+                <div class = "form.group">
+                    <label>Email</label>
+                    <input type="text"[(ngModel)]="email" name="email"  class="form-control">
+                </div>
+                <div class = "form.group">
+                    <label>Password</label>
+                    <input type="password" [(ngModel)]="password" name="password"  class="form-control">
+                </div>
+                <div class = "form.group">
+                    <label>occupation</label>
+                    <input type="text" [(ngModel)]="occupation" name="occupation"  class="form-control">
+                </div>
+                <div>
+                <p>
+                    
+                </p>
+                </div>
+                <input type="submit" class="btn btn-primary"  value="Submit">
+            </form>
+
+<div> -->
+
+
+
+
+<div class="card">
+        <div >
+            <div class="col-sm-4 ">
+                <div class="myleft">
+                        <div class="mytext2">
+                               <!-- form       -->
+                            <h2 class="page-header mytext"> <p>
+                                       <br>
+                                </p>Create an account</h2>
+                                <p> Create your Account. It takes less than a minute.
+                                    If you already have an account  <a href="/">Login</a>
+                                </p>
+                            <form (submit) ="onRegisterSubmit()">
+                                <div >
+                               
+                                <input *ngIf ="!errorName" type="text" [(ngModel)]="name" name="name" class="form-control " placeholder="Name">
+                                <input *ngIf ="errorName" type="text" [(ngModel)]="name" name="name" class="form-control errorInput" placeholder="Name">
+                                </div>
+                                <div >
+                                    
+                                    <input *ngIf ="!UserNameError" type="text" [(ngModel)]="Username" name="Username" class="form-control"  placeholder="User Name">
+                                    <input *ngIf ="UserNameError" type="text" [(ngModel)]="Username" name="Username" class="form-control errorInput"  placeholder="User Name">
+                                </div>
+                                <div >
+                                    
+                                    <input  *ngIf ="!emailError" type="text"[(ngModel)]="email" name="email"  class="form-control"  placeholder="Email">
+                                    <input  *ngIf ="emailError" type="text"[(ngModel)]="email" name="email"  class="form-control errorInput"  placeholder="Email">
+                                </div>
+                                <div >
+                                       
+                                    <input *ngIf ="!PasswordError" type="password" [(ngModel)]="password" name="password"  class="form-control" placeholder="password">
+                                    <input *ngIf ="PasswordError" type="password" [(ngModel)]="password" name="password"  class="form-control errorInput" placeholder="password">
+                                </div>
+                                <div >
+                                     
+                                        <input  *ngIf ="!ConfirmPasswordError" type="password" [(ngModel)]="ConfirmPassword"  name="ConfirmPassword"  class="form-control" placeholder="Confirm password">
+                                        <input *ngIf ="ConfirmPasswordError" type="password" [(ngModel)]="ConfirmPassword"  name="ConfirmPassword "  class="form-control errorInput" placeholder="Confirm password">
+                                    </div>
+
+                                    <div class = "form.group">
+                                          
+                                            <input *ngIf ="!OccupationError"  type="text" [(ngModel)]="occupation" name="occupation"  class="form-control" placeholder="occupation" >
+                                            <input *ngIf ="OccupationError" type="text" [(ngModel)]="occupation" name="occupation"  class="form-control errorInput" placeholder="occupation" >
+                                        </div>
+                                <div>
+                                <p>
+                                    
+                                </p>
+                                </div>
+                                <input *ngIf="!successMsg" type="submit" class="btn btn-primary"  value="Submit">
+                             
+                            </form>
+                            <!-- error  -->
+                            <div *ngIf="showError"  class="alert">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Warning!</strong> {{ErroMsg}}
+                                  </div>
+                            <!-- end error -->
+                            <!-- success messages -->
+                            <div *ngIf="successMsg"  class="alert successAlert">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Success!</strong> {{ErroMsg}}
+                                  </div>
+                        </div>
+                        <!-- end form -->
+                </div>
+            </div>
+            <!-- <div class="col-sm-6">
+                <div clss = "Myright" >
+                        <h1> <b>SHU APP</b></h1>
+                        <P>Build meaningful relationships <br>
+                            between managers and employees.<br> 
+                            <br>
+                            <br>
+                            <b>Get in touch with social media soon !</b>
+                        </P>
+                     <a href="http://www.facebook.com"><input type="button" class="btn btn-primary myFbbutton"></a>
+                        <div>
+                            <a href="https://www.twitter.com">   <input  type="button" class="btn btn-primary myTwbutton"  ></a>
+                        </div>
+                        <div>
+                            <a href="http://www.gmail.com">  <input  type="button" class="btn btn-primary myGmbutton"  ></a>
+                        </div>
+                       
+                </div> -->
+               
+<!--     
+            </div>
+          -->
+        </div>
+      </div>

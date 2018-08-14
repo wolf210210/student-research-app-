@@ -1,0 +1,58 @@
+<!-- 
+<div class="mycolor">
+  <p>
+    video-detail works!
+  </p>
+</div> -->
+
+<!-- {{video.title}}
+{{video.url}}
+{{video.description}}<br>
+{{video.ratings}} -->
+
+<div>
+    <form  (submit) ="SubmitVideo()">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Title</label>
+          <input type="text" class="form-control" name="title" placeholder="Title" [(ngModel)]="video.title">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">URL</label>
+            <input type="text" class="form-control" name="url" placeholder="url" [(ngModel)]="video.url">
+          </div>
+   
+          <div class="form-group">
+              <label for="exampleFormControlInput1">Ratings</label>
+              <input type="text" class="form-control" name="ratings" placeholder="ratings" [(ngModel)]="video.ratings">
+            </div>
+       
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Description</label>
+          <textarea class="form-control" name="description"  rows="3" [(ngModel)]="video.description"></textarea>
+        </div>
+        <input *ngIf="!ShowSuccess" type="submit" class="btn btn-primary"  value="Submit">
+      </form>
+      
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+      
+    </div>
+  </div>

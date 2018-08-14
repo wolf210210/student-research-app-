@@ -16,7 +16,8 @@ router.post('/setComment',(req,res,next) => {
         VID: req.body.VID,
         username : req.body.username,  
         comment : req.body.comment,
-        CType : req.body.CType
+        CType : req.body.CType,
+        rate : req.body.rate
     });
  
     // console.log(req.body);

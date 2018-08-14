@@ -6,7 +6,24 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 
+const multer = require('multer');
+const bcrypt = require('bcryptjs');
+
+const storage =  multer.diskStorage({
+    destination : function(req,file,cb){
+        cb(null , './uploads/');
+    },
+    filename:function(req,file,cb){
+        cb(null,file.originalname);
+    }
+})
+
+
+
+const  upload = multer({storage:storage});
+
 const User = require('../models/user');
+
 
 // Resister 
 router.post('/register',(req,res,next) => {
@@ -32,6 +49,34 @@ router.post('/register',(req,res,next) => {
 
 
 });
+
+  
+
+
+// Resister 
+router.post('/register2',upload.single('profileImage'),(req,res,next) => {
+    // res.send('REGISTER');
+    // console.log(req.file);
+    let newUser = new User({
+     name: req.body.name,
+     email: req.body.email,
+     username : req.body.username,  
+     password : req.body.password,
+     occupation : req.body.occupation
+    });
+ 
+    User.addUser(newUser,(err,user)=>{
+     if(err){
+         res.json({success:false, msg:'failed to register user'});
+     }
+     else{
+         res.json({success: true , msg:'User registered'});
+     }
+ 
+    });
+ 
+ 
+ });
 
 // Authenticate
 router.post('/authenticate',(req,res,next) => {
@@ -113,6 +158,64 @@ router.get('/profile',passport.authenticate('jwt',{session:false}) , (req,res,ne
      ) 
    
    });
+
+
+
+   router.post('/chakePassword',(req,res,next) => {
+
+    //console.log(req.body);
+
+    User.comparePassword(req.body.password , req.body.userPassword,(err,isMatch)=>{ 
+    
+       if(err) throw err;
+       if(isMatch){
+           return res.json({success: true , msg :' password Match'})
+
+       }
+       else{
+           return res.json({success: false , msg :'Wrong password'})
+       }
+   });
+ 
+  });
+
+
+  /* get the newly added password and then decrypt that password and add that password to the data collection */
+  router.put('/UpdatePassword',(req,res,next) => {
+    let  ChPassword  = {
+        NewChPassword : ""
+                            }
+            //  console.log(req.body);
+            bcrypt.genSalt(10,(err,salt)=>{
+            bcrypt.hash(req.body.newpassword,salt,(err,hash)=>{
+                if(err) throw err;
+                ChPassword.NewChPassword = hash;
+                
+
+            User.findByIdAndUpdate(req.body._id,
+            {
+            $set:{  password:ChPassword.NewChPassword
+
+                }
+            },
+            {
+                new :true
+            },
+                function(err,upUser){
+                    if(err){
+                    res.send("error update");
+                    }else{
+                    res.json(upUser);
+                    }
+                }
+
+            ) 
+
+          });
+
+     });
+
+});
 
    
 

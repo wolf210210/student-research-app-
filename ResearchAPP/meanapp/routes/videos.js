@@ -104,6 +104,117 @@ router.post('/getProjectId',(req,res,next) => {
           })
           
 });
+
+
+
+router.put('/UpdateRate',(req,res,next) => {
+
+
+  Video.findByIdAndUpdate(req.body._id,
+      {
+      $set:{ 
+              neg : req.body.neg,
+              pos : req.body.pos,
+              ratings : req.body.ratings
+            }
+      },
+        {
+           new :true
+        },
+        function(err,updateProject){
+          if(err){
+            res.send("error update");
+          }else{
+            res.json(updateProject);
+          }
+        }
+
+  ) 
+
+});
+  
+
+
+
+
+router.put('/UpdateVideo',(req,res,next) => {
+
+
+  Video.findByIdAndUpdate(req.body._id,
+      {
+      $set:{ 
+                title: req.body.title,
+                subject : req.body.subject,
+                description : req.body.description,
+                unit : req.body.unit
+            
+            }
+      },
+        {
+           new :true
+        },
+        function(err,updateProject){
+          if(err){
+            res.send("error update");
+          }else{
+            res.json(updateProject);
+          }
+        }
+
+  ) 
+
+});
+
+
+
+
+router.delete('/deleteVideo/:id',(req,res,next) => {
+
+ 
+  Video.findByIdAndRemove(req.params.id,
+
+           function(err,deletedProject){
+             if(err){
+               res.send("error update");
+             }else{
+              console.log('Deleting a Project');
+               res.json({  
+                success:true, 
+                deletedProject
+               });
+               
+  
+  
+             }
+           }
+   
+     ) 
+
+
+ });
+
+
+ router.post('/getVideosByUnit',(req,res,next) => {
+
+  const unit = req.body.unit;
+
+
+  Video.finedVideoUnit(unit,(err,Videos)=> {
+    if(err) throw err;
+
+    if(!Videos){
+  
+    res.json({success:false , msg : 'Videos not found'});
+  }
+    
+    if(Videos){
+      return res.json({videos:Videos});
+    }     
+
+  })
+  
+});
+
   
 
 module.exports = router;

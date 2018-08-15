@@ -37,7 +37,7 @@ const videoSchema =  mongoose.Schema({
         required:true
     },
     ratings:{
-        type:String,
+        type:Number,
         required:true
     }
 
@@ -63,8 +63,16 @@ module.exports.geAllVideo = function(callback){
     Video.find(callback);
 }
 
+
 // get Video By Id
 module.exports.getVideoById = function(id, callback){
     Video.findById(id,callback);
 }
 
+
+module.exports.finedVideoUnit = function (unit,callback){
+    const query = {unit:unit}
+    var mysort = { 'ratings': 1 };
+    Video.find(query,callback).sort({ 'ratings': -1 });
+    
+}

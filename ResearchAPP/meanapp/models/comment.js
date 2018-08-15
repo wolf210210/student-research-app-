@@ -25,6 +25,10 @@ const CommentsSchema =  mongoose.Schema({
     CType:{
         type:String,
         required:true
+    },
+    rate:{
+        type:String,
+        required:true
     }
 
 });

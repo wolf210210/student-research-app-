@@ -54,4 +54,15 @@ module.exports.comparePassword = function(candidatePassword , hash , callback){
         callback(null,isMatch);
     });
 
+    
+
+}
+
+
+module.exports.comparePassword = function(candidatePassword , hash , callback){
+    bcrypt.compare(candidatePassword,hash,(err,isMatch)=>{
+        if(err) throw err;
+        callback(null,isMatch);
+    });
+
 }
